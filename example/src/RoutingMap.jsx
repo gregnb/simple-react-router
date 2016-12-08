@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	/* Structure main app */
 	var App = ( 
 		<div id="viewport">
+			<Navigation />
 			{routing}
 		</div>
 	);
