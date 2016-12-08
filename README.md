@@ -68,6 +68,6 @@ handleClick: function(route, event) {
 	
 	window.router.changeRoute('/product');
 			
-},
+}
 
 ```
