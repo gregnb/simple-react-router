@@ -41,3 +41,14 @@ var App = (
 ReactDOM.render(App, document.getElementById('app-root'));
 
 ```
+
+
+The Routing configuration above will render the following:
+
+URL                     | Component
+------------------------|-----------
+`/`                     | `Index`
+`/category`             | `Category`
+`/product`              | `Product`
+`/support/faqs`   	| `Support -> FAQs`
+`/support/contact`   	| `Support -> Contact`
