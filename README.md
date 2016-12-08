@@ -6,7 +6,7 @@ Installation
 ------------
 Just download SimpleRouter.min.js and include it with a script tag like this:
 ```html
-  <script type="text/javascript" language="javascript" src="SimpleRouter.min.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript" src="SimpleRouter.min.js" charset="utf-8"></script>
 ```
 
 Router Configuration
