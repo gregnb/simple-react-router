@@ -52,3 +52,22 @@ URL                     | Component
 */product*          	| **Product**
 */support/faqs*  	| **Support -> FAQs**
 */support/contact*   	| **Support -> Contact**
+
+
+How to change Routes
+--------------------
+
+To change routing from any place within your app simply call window.router.changeRoute(path). Example usage:
+
+```html
+
+handleClick: function(route,event) {
+	
+	event.preventDefault();
+	event.stopPropagation(); 	
+	
+	window.router.changeRoute('/product');
+			
+},
+
+```
