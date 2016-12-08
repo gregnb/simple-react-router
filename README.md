@@ -47,8 +47,8 @@ The Routing configuration above will render the following:
 
 URL                     | Component
 ------------------------|-----------
-**/**                   | **Index**
-**/category**             | **Category**
-**/product**              | **Product**
-**/support/faqs**   	| **Support -> FAQs**
-**/support/contact**   	| **Support -> Contact**
+*/*                   	| **Index**
+*/category*             | **Category**
+*/product*          	| **Product**
+*/support/faqs*  	| **Support -> FAQs**
+*/support/contact*   	| **Support -> Contact**
