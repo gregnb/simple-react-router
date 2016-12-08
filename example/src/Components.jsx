@@ -24,6 +24,38 @@
 	
 	});	
 
+	
+	var Navigation = React.createClass({
+
+		getInitialState: function() {	
+			return null;		
+		},
+
+
+		handleClick: function(route,event) {
+			
+			event.preventDefault();
+			event.stopPropagation(); 	
+
+			window.router.changeRoute(route);
+			
+		},
+				
+		render: function() {
+			return (
+				<nav>
+					<ul>
+						<li><a onClick={this.handleClick.bind(null,'/*')}>Home</a></li>
+						<li><a onClick={this.handleClick.bind(null,'/category')}>Category</a></li>
+						<li><a onClick={this.handleClick.bind(null,'/product')}>Product</a></li>
+						<li><a onClick={this.handleClick.bind(null,'/support/faqs')}>FAQs</a></li>
+						<li><a onClick={this.handleClick.bind(null,'/support/contact')}>Contact</a></li>
+					</ul>
+				</nav>
+			);
+		}
+	
+	});	
 
 	
 	var Category = React.createClass({
