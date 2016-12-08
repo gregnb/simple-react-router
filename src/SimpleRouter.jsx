@@ -58,54 +58,31 @@
 		
 		},
 		
-		changeRoute: function(path, params, props) {
+		changeRoute: function changeRoute(path, params, props) {
 	
-			var url = this.state.root+path
-				url = url.replace(/\/\/+/g, '/'); /* strip possible user error double slashes */
+			var url = this.state.root + path;
+			url = url.replace(/\/\/+/g, '/'); /* strip possible user error double slashes */
+	
+			var routeInfo = this.arrFind('search', this.routingMap, 'path', url);
 			
-			var result = {};
+			if (params) 
+				for (var i = 0; i < params.length; i++)
+					if (params[i].length) 
+						url += '/' + params[i];
+									
+			url = (path == '/*') ? this.state.root : url;
 			
-			if(url == '/*') {
-				
-				/* useful for welcome/default index screen */			
-				var routeInfo = this.arrFind('compare', this.routingMap, 'path', '/*');
-
-				result.path = routeInfo.path;
-				result.component = (routeInfo.component) ? routeInfo.component : null ;
-				result.params = null;
-				
-				url = '/';
-							
-			} else {
-				
-				if(params)
-					for(var i = 0; i < params.length; i++)
-						if(params[i].length)
-							url += '/' + params[i];
-				
-				var routeInfo = this.arrFind('search', this.routingMap, 'path', url);
-
-				/* check if there's an index */			
-				if(!routeInfo)
-					routeInfo = this.arrFind('compare', this.routingMap, 'path', url+'/*');
-					
-				result.path = path;
-				result.component = (routeInfo.component) ? routeInfo.component : null ;
-				result.params = params;
-				
-			}
-			
-			this.setState({ 
-				path: result.path,
-				params: result.params,
-				props: (props) ? props : null,
-				component: result.component
+			this.setState({
+				path: routeInfo.path,
+				params: (params) ? params : null,
+				props: props ? props : null,
+				component: routeInfo.component ? routeInfo.component : null
 			});
-			
-			history.pushState({ path: url}, '', url);
+	
+			history.pushState({ path: url }, '', url);
 			this.saveHistory(path, params);
-						
 		},
+		
 
 		routerHistory: function(limit) {
 			var history = this.historyStack;
