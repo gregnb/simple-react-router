@@ -15,7 +15,7 @@ The routing configuration is very straight forward. You simply define the paths 
 
 ```html
 
-/* Tie path to Components */
+	/* Tie path to Components */
 	var routing = (
 		<Router root="/simple-react-router/example/">
 			<Route path="*" component={<Index />} />
