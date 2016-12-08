@@ -11,7 +11,9 @@ Just download SimpleRouter.min.js and include it with a script tag like this:
 
 Router Configuration
 --------------------
-The routing configuration is very straight forward. You simply define the paths and tie components to them! Path value of * is used for Index. Here is the example config that's found in the sample code inside of example/
+The routing configuration is very straight forward. You simply define the paths and tie components to them! Path value of * is used for Index. 
+
+Here is the example config that's found in the sample code inside of example/
 
 ```html
 
