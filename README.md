@@ -61,7 +61,7 @@ To change routing from any place within your app simply call window.router.chang
 
 ```html
 
-handleClick: function(route,event) {
+handleClick: function(route, event) {
 	
 	event.preventDefault();
 	event.stopPropagation(); 	
