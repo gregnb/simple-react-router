@@ -1,0 +1,18 @@
+
+Options +FollowSymLinks -MultiViews
+
+AddType x-mapp-php6 .php
+AddHandler x-mapp-php6 .php
+
+RewriteEngine On
+RewriteBase /simple-react-router/example/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.html [QSA,L]
+RewriteRule ^category/(.*)$ index.html [QSA,L]
+RewriteRule ^product/(.*)$ index.html [QSA,L]
+RewriteRule ^support/(.*)$ index.html [QSA,L]
+
+
